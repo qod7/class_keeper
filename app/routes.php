@@ -11,4 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@home');
+Route::get('/', array('as' => 'home', 'uses' => 'HomeController@home'));
+
+Route::controller('user','UserController',[
+	'getLogin' => 'login',
+	'postLogin' => 'loginuser',
+	'getLogout' => 'logout',
+	'getSignup' => 'signup',
+	'postSignup' => 'saveuser']);
+
