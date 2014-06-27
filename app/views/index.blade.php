@@ -4,6 +4,11 @@
 	Classkeeper
 @endsection
 
+
+@section('sidebar')
+	
+@endsection
+
 @section('content')
 <div id="sidebar-left" class="col-xs-2 col-sm-2">
 	<ul class="nav main-menu">
@@ -175,6 +180,7 @@
 		</li>
 	</ul>
 </div>
+
 <!--Start Content-->
 <div id="content" class="col-xs-12 col-sm-10">
 	<div class="preloader">

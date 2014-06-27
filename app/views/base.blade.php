@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -158,6 +158,7 @@
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{ URL::asset('plugins/bootstrap/bootstrap.min.js') }}"></script>
+
 <script src="{{ URL::asset('plugins/justified-gallery/jquery.justifiedgallery.min.js') }}"></script>
 <script src="{{ URL::asset('plugins/tinymce/tinymce.min.js') }}"></script>
 <script src="{{ URL::asset('plugins/tinymce/jquery.tinymce.min.js') }}"></script>
