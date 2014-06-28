@@ -25,7 +25,8 @@ class AdminController extends BaseController {
 		$validator = Validator::make($input,
 			array(
 				'id' => 'required|unique:school',
-				'name' => 'required'
+				'name' => 'required',
+				'totalclasses' => 'required'
 				));
 
 		if (!$validator->fails())
@@ -36,7 +37,7 @@ class AdminController extends BaseController {
 			$school->totalclasses=$input['totalclasses'];
 			$school->save();
 
-			return Redirect::route('home');
+			return View::make('addschool',array('message'));
 		}
 		else
 		{
