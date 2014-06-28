@@ -119,7 +119,7 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="{{ URL::route('addschool') }}">Add new School</a></li>
-						<li><a href="{{ URL::to('/admin/addteacher') }}">Add Teacher</a></li>
+						<li><a href="{{ URL::route('addteacher') }}">Add Teacher</a></li>
 						<li><a href="{{ URL::route('listschool') }}">View School List</a></li>
 					</ul>
 				</li>
