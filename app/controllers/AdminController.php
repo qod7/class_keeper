@@ -1,15 +1,16 @@
 <?php
 
 class AdminController extends BaseController {
-	public function getIndex()
-	{
-		return "Hello";
-	}
 
+	public function __construct()
+	{
+		$this->Data = array();
+		$this->Data['menuindex'] = 1;
+	}
 	public function ListSchool()
 	{
-		$schoollist = School::get();
-		return View::make('schoollist');
+		$this->Data['schools'] = School::get();
+		return View::make('schoollist',$this->Data);
 	}
 
 	public function addschool()

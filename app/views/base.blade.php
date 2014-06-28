@@ -105,7 +105,7 @@
 		<div id="sidebar-left" class="col-xs-2 col-sm-2">
 			<ul class="nav main-menu">
 				<li>
-					<a href="{{ URL::route('home') }}" class="active">
+					<a href="{{ URL::route('home') }}">
 						<i class="fa fa-dashboard"></i>
 						<span class="hidden-xs">Dashboard</span>
 					</a>
@@ -118,10 +118,10 @@
 						<span class="hidden-xs">School and Teacher</span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="{{ URL::to('/admin/addschool') }}">Add new School</a></li>
-						<li><a class="ajax-link" href="{{ URL::to('/admin/addteacher') }}">Add Teacher</a></li>
-						<li><a class="ajax-link" href="{{ URL::to('/admin/listschool') }}">View School List</a></li>
-						<li><a class="ajax-link" href="{{ URL::to('/admin/listteacher') }}">View Teacher List</a></li>
+						<li><a href="{{ URL::to('/admin/addschool') }}">Add new School</a></li>
+						<li><a href="{{ URL::to('/admin/addteacher') }}">Add Teacher</a></li>
+						<li><a href="{{ URL::route('listschool') }}">View School List</a></li>
+						<li><a href="{{ URL::to('/admin/listteacher') }}">View Teacher List</a></li>
 					</ul>
 				</li>
 				@endif

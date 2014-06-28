@@ -17,7 +17,9 @@ class HomeController extends BaseController {
 
 	public function home()
 	{
-		return View::make('index');
+		$this->Data = array();
+		$this->Data['menuindex'] = 0;
+		return View::make('index',$this->Data);
 	}
 
 }
