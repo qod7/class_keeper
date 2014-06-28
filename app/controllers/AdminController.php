@@ -12,4 +12,9 @@ class AdminController extends BaseController {
 		$this->Data['schools'] = School::get();
 		return View::make('schoollist',$this->Data);
 	}
+
+	public function addschool()
+	{
+		return View::make('addschool');
+	}
 }
