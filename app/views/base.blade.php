@@ -103,7 +103,7 @@
 		<div id="sidebar-left" class="col-xs-2 col-sm-2">
 			<ul class="nav main-menu">
 				<li>
-					<a href="{{ URL::route('home') }}" class="active ajax-link">
+					<a href="{{ URL::route('home') }}" class="active">
 						<i class="fa fa-dashboard"></i>
 						<span class="hidden-xs">Dashboard</span>
 					</a>
