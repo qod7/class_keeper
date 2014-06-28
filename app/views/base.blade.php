@@ -71,7 +71,7 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
 									<div class="avatar">
-										<img src="img/logo.png" class="img-rounded" alt="avatar" />
+										<img src="/img/logo.png" class="img-rounded" alt="avatar" />
 									</div>
 									<i class="fa fa-angle-down pull-right"></i>
 									<div class="user-mini pull-right">
@@ -118,7 +118,7 @@
 						<span class="hidden-xs">School and Teacher</span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="{{ URL::to('/admin/addschool') }}">Add new School</a></li>
+						<li><a href="{{ URL::route('addschool') }}">Add new School</a></li>
 						<li><a href="{{ URL::to('/admin/addteacher') }}">Add Teacher</a></li>
 						<li><a href="{{ URL::route('listschool') }}">View School List</a></li>
 						<li><a href="{{ URL::to('/admin/listteacher') }}">View Teacher List</a></li>
