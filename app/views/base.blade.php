@@ -116,10 +116,10 @@
 						<span class="hidden-xs">School and Teacher</span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="ajax-link" href="{{ URL::route('admin.index') }}">Add new School</a></li>
-						<li><a class="ajax-link" href="ajax/charts_google.html">Add Teacher</a></li>
-						<li><a class="ajax-link" href="ajax/charts_flot.html">View School List</a></li>
-						<li><a class="ajax-link" href="ajax/charts_morris.html">View Teacher List</a></li>
+						<li><a class="ajax-link" href="{{ URL::to('/admin/addschool') }}">Add new School</a></li>
+						<li><a class="ajax-link" href="{{ URL::to('/admin/addteacher') }}">Add Teacher</a></li>
+						<li><a class="ajax-link" href="{{ URL::to('/admin/listschool') }}">View School List</a></li>
+						<li><a class="ajax-link" href="{{ URL::to('/admin/listteacher') }}">View Teacher List</a></li>
 					</ul>
 				</li>
 				@endif

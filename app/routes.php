@@ -18,3 +18,6 @@ Route::controller('user','UserController',[
 	'postLogin' => 'loginuser',
 	'getLogout' => 'logout']);
 
+Route::controller('admin','AdminController',[
+	'getIndex' => 'index'
+	]);
