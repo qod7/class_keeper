@@ -124,6 +124,17 @@
 					</ul>
 				</li>
 				@endif
+				@if(Auth::user()->role == 1)
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle">
+						<i class="fa fa-list"></i>
+						<span class="hidden-xs">School and Teacher</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="{{ URL::route('addschool') }}">View Teachers List</a></li>
+					</ul>
+				</li>
+				@endif
 			</ul>
 		</div>
 		
