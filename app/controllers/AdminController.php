@@ -147,8 +147,8 @@ class AdminController extends BaseController {
 		if (!$validator->fails())
 		{
 			$classroom->grade=$input['grade'];
-			$classroom->name=$input['totalstudents'];
-			$classroom->totalclasses=$input['routine'];
+			$classroom->totalstudents=$input['totalstudents'];
+			$classroom->routine=$input['routine'];
 			$classroom->save();
 
 			return Redirect::route('home');

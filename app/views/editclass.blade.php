@@ -34,30 +34,30 @@
 					<fieldset>
 						<legend>Edit Class</legend>
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="contact_no">School Name:</label>
+							<label class="col-sm-3 control-label" for="school_name">School Name:</label>
 							<div class="col-sm-8">
-								<input type="text" name="totalstudents" class="form-control" value="{{ $class->school->name }}" disabled/>
+								<input type="text" name="school_name" class="form-control" value="{{ $class->school->name }}" disabled/>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="contact_no">Grade:</label>
+							<label class="col-sm-3 control-label" for="grade">Grade:</label>
 							<div class="col-sm-8">
-								<input type="text" name="totalstudents" class="form-control" value="{{ $class->grade }}" />
+								<input type="text" name="grade" class="form-control" value="{{ $class->grade }}" />
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="contact_no">Total Students:</label>
+							<label class="col-sm-3 control-label" for="totalstudents">Total Students:</label>
 							<div class="col-sm-8">
 								<input type="text" name="totalstudents" class="form-control" value="{{ $class->totalstudents }}"/>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="contact_no">Routine:</label>
+							<label class="col-sm-3 control-label" for="routine">Routine:</label>
 							<div class="col-sm-8">
-								<textarea class="form-control" style="height:200px;" name="routine">{{$class->routine}}</textarea>
+								<textarea  name="routine" class="form-control" style="height:200px;">{{$class->routine}}</textarea>
 							</div>
 						</div>
 
