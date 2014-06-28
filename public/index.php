@@ -6,8 +6,8 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 'On');  //On or Off
 
 /*
 |--------------------------------------------------------------------------
@@ -49,4 +49,10 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 |
 */
 
-$app->run();
+try {
+    $app->run();
+} catch(\Exception $e) {
+    echo "<pre>";
+    echo $e;
+    echo "</pre>";
+}

@@ -69,7 +69,7 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
 									<div class="avatar">
-										<img src="img/avatar.jpg" class="img-rounded" alt="avatar" />
+										<img src="img/logo.png" class="img-rounded" alt="avatar" />
 									</div>
 									<i class="fa fa-angle-down pull-right"></i>
 									<div class="user-mini pull-right">
@@ -103,11 +103,26 @@
 		<div id="sidebar-left" class="col-xs-2 col-sm-2">
 			<ul class="nav main-menu">
 				<li>
-					<a href="#" class="active ajax-link">
+					<a href="{{ URL::route('home') }}" class="active ajax-link">
 						<i class="fa fa-dashboard"></i>
 						<span class="hidden-xs">Dashboard</span>
 					</a>
 				</li>
+
+				@if(Auth::user()->role >= 2)
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle">
+						<i class="fa fa-list"></i>
+						<span class="hidden-xs">School and Teacher</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="ajax-link" href="{{ URL::route('admin.index') }}">Add new School</a></li>
+						<li><a class="ajax-link" href="ajax/charts_google.html">Add Teacher</a></li>
+						<li><a class="ajax-link" href="ajax/charts_flot.html">View School List</a></li>
+						<li><a class="ajax-link" href="ajax/charts_morris.html">View Teacher List</a></li>
+					</ul>
+				</li>
+				@endif
 			</ul>
 		</div>
 		
