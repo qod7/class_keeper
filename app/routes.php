@@ -16,7 +16,10 @@ Route::get('/', array('as' => 'home', 'before' => 'auth' ,'uses' => 'HomeControl
 Route::controller('user','UserController',[
 	'getLogin' => 'login',
 	'postLogin' => 'loginuser',
-	'getLogout' => 'logout']);
+	'getLogout' => 'logout',
+	'getTeacher' => 'addteacher',
+	'postTeacher' => 'saveteacher'
+	]);
 
 Route::get('/admin/listschools', array('as' => 'listschool', 'before' => 'auth' ,'uses' => 'AdminController@ListSchool'));
 
