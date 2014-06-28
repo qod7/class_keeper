@@ -24,6 +24,7 @@ Route::controller('user','UserController',[
 Route::get('/admin/listschools', array('as' => 'listschool', 'before' => 'auth' ,'uses' => 'AdminController@ListSchool'));
 
 Route::get('/school/listteacher/{id}',array('as' => 'listteacher', 'before' => 'auth' ,'uses' => 'AdminController@ListTeachers'))->where('id', '[0-9]+');
+Route::get('/school/listclasses/{id}',array('as' => 'listteacher', 'before' => 'auth' ,'uses' => 'AdminController@ListClasses'))->where('id', '[0-9]+');
 
 Route::get('/school/delete/{id}',array('as' => 'deleteschool', 'before' => 'auth' ,'uses' => 'AdminController@DeleteSchool'))->where('id', '[0-9]+');
 
