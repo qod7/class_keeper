@@ -95,4 +95,52 @@ class AdminController extends BaseController {
 			return View::make('addschool',array('errors' => $errors));
 		}
 	}
+
+	public function viewclass($id)
+	{
+		if(Classroom::where('id',$id)->count() == 0)
+			App::abort(404);
+
+		$class=Classroom::where('id', $id)->first();
+		$school=School::where('id',$class->schoolid)->first();
+		$class->school=$school;
+
+		return View::make('editclass',array('class' => $class));
+	}
+
+	public function saveclass($id)
+	{
+		if(Classroom::where('id',$id)->count() == 0)
+			App::abort(404);
+
+		$classroom=Classroom::where('id', $id)->first();
+
+		Input::flash();
+
+		$input=Input::all();
+		$validator = Validator::make($input,
+			array(
+				'grade' => 'required',
+				'totalstudents' => 'required',
+				'routine' => 'required'
+				));
+
+		if (!$validator->fails())
+		{
+			$classroom->grade=$input['grade'];
+			$classroom->name=$input['totalstudents'];
+			$classroom->totalclasses=$input['routine'];
+			$classroom->save();
+
+			return Redirect::route('home');
+		}
+		else
+		{
+			$errors = $validator->messages()->all();
+
+			$school=School::where('id',$classroom->schoolid)->first();
+			$classroom->school=$school;
+			return View::make('editclass',array('errors' => $errors, 'class' => $classroom));
+		}
+	}
 }
