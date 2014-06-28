@@ -9,6 +9,8 @@ class School extends Eloquent {
      */
     protected $table = 'school';
 
+    public $timestamps = false;
+
     public function getHeadMasterName()
     {
     	if($this->hid == 0)

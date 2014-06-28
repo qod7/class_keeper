@@ -19,6 +19,18 @@
 				<div class="no-move"></div>
 			</div>
 			<div class="box-content">
+				@if(isset($errors))
+					<div class="alert alert-danger">
+						<ul>
+							@foreach($errors as $error)
+								<li>
+									{{ $error }}
+								</li>
+							@endforeach
+						</ul>
+					</div>
+				@endif
+
 				<form id="defaultForm" method="post" action="{{ URL::route('saveschool') }}" class="form-horizontal">
 					<fieldset>
 						<legend>Fill the following</legend>

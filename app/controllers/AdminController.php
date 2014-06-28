@@ -21,10 +21,11 @@ class AdminController extends BaseController {
 	public function saveschool()
 	{
 		$input = Input::all();
+
 		$validator = Validator::make($input,
 			array(
-				'id' => 'required|unique:schools,name',
-				'name' => 'required|min:4'
+				'id' => 'required|unique:school',
+				'name' => 'required'
 				));
 
 		if (!$validator->fails())
@@ -34,7 +35,13 @@ class AdminController extends BaseController {
 			$school->name=$input['name'];
 			$school->totalclasses=$input['totalclasses'];
 			$school->save();
-		}
 
+			return Redirect::route('home');
+		}
+		else
+		{
+			$errors = $validator->messages()->all();
+			return View::make('addschool',array('errors' => $errors));
+		}
 	}
 }
