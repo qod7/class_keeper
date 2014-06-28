@@ -40,7 +40,7 @@ class UserController extends BaseController {
 			array(
 				'name' => 'required',
 				'username' => 'required|unique:users',
-				'schoolid' => 'required|exists:school,id'
+				'school_id' => 'required|exists:school,id'
 				));
 
 		if (!$validator->fails())
@@ -48,6 +48,8 @@ class UserController extends BaseController {
 			$user= new User();
 			$user->name=$input['name'];
 			$user->username=$input['username'];
+			$user->school_id=$input['school_id'];
+			$user->password=Hash::make('kathmandu');
 			$user->save();
 
 			return Redirect::route('addteacher');

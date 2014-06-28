@@ -51,7 +51,7 @@
 						<div class="form-group">
 							<label class="col-sm-3 control-label">School Id</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="schoolid" />
+								<input type="text" class="form-control" name="school_id" />
 							</div>
 						</div>
 
