@@ -19,3 +19,6 @@ Route::controller('user','UserController',[
 	'getLogout' => 'logout']);
 
 Route::get('/admin/listschools', array('as' => 'listschool', 'before' => 'auth' ,'uses' => 'AdminController@ListSchool'));
+
+Route::get('/school/add',array('as' => 'addschool','before' =>'auth', 'uses' => 'AdminController@addschool'));
+Route::post('/school/add',array('as' => 'saveschool', 'before' => 'auth', 'uses' => 'AdminController@saveschool'));

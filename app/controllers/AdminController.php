@@ -9,6 +9,11 @@ class AdminController extends BaseController {
 	public function ListSchool()
 	{
 		$schoollist = School::get();
-		View::make('schoollist');
+		return View::make('schoollist');
+	}
+
+	public function addschool()
+	{
+		return View::make('addschool');
 	}
 }
