@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('title')
-	Add School
+	Add A Teacher
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
 		<div class="box">
 			<div class="box-header">
 				<div class="box-name">
-					<span>Add School</span>
+					<span>Add Teacher</span>
 				</div>
 				<div class="box-icons">
 					<a class="expand-link">
@@ -19,7 +19,7 @@
 				<div class="no-move"></div>
 			</div>
 			<div class="box-content">
-				@if(isset($errors) && count($errors)>0)
+				@if(isset($errors) && count($errors) >0)
 					<div class="alert alert-danger">
 						<ul>
 							@foreach($errors as $error)
@@ -31,16 +31,9 @@
 					</div>
 				@endif
 
-				<form id="defaultForm" method="post" action="{{ URL::route('saveschool') }}" class="form-horizontal">
+				<form id="defaultForm" method="post" action="{{ URL::route('saveteacher') }}" class="form-horizontal">
 					<fieldset>
 						<legend>Fill the following</legend>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Id</label>
-							<div class="col-sm-8">
-								<input type="text" class="form-control" name="id" />
-							</div>
-						</div>
-
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Name</label>
 							<div class="col-sm-8">
@@ -49,9 +42,16 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-sm-3 control-label">Total Classes</label>
+							<label class="col-sm-3 control-label">Username</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="totalclasses" />
+								<input type="text" class="form-control" name="username" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label">School Id</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" name="schoolid" />
 							</div>
 						</div>
 
@@ -60,7 +60,6 @@
 								<button class="btn btn-primary btn-label-left" type="submit">Submit</button>
 							</div>
 						</div>
-
 					</fieldset>
 				</form>
 			</div>

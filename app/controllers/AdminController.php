@@ -37,7 +37,7 @@ class AdminController extends BaseController {
 			$school->totalclasses=$input['totalclasses'];
 			$school->save();
 
-			return View::make('addschool',array('message'));
+			return Redirect::route('addschool');
 		}
 		else
 		{

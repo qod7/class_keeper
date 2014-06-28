@@ -28,4 +28,35 @@ class UserController extends BaseController {
 		return Redirect::route('login');
 	}
 
+	public function getTeacher()
+	{
+		return View::make('addteacher');
+	}
+
+	public function postTeacher()
+	{
+		$input = Input::all();
+		$validator = Validator::make($input,
+			array(
+				'name' => 'required',
+				'username' => 'required|unique:users',
+				'schoolid' => 'required|exists:school,id'
+				));
+
+		if (!$validator->fails())
+		{
+			$user= new User();
+			$user->name=$input['name'];
+			$user->username=$input['username'];
+			$user->save();
+
+			return Redirect::route('addteacher');
+		}
+		else
+		{
+			$errors = $validator->messages()->all();
+			return View::make('addteacher',array('errors' => $errors));
+		}	
+	}
+
 }
