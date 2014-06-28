@@ -26,7 +26,7 @@ class UserController extends BaseController {
 	public function getLogout()
 	{
 		Auth::logout();
-		return Redirect::route('home');
+		return Redirect::route('login');
 	}
 
 }
