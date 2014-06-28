@@ -5,4 +5,10 @@ class AdminController extends BaseController {
 	{
 		return "Hello";
 	}
+
+	public function ListSchool()
+	{
+		$schoollist = School::get();
+		View::make('schoollist');
+	}
 }

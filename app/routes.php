@@ -18,6 +18,4 @@ Route::controller('user','UserController',[
 	'postLogin' => 'loginuser',
 	'getLogout' => 'logout']);
 
-Route::controller('admin','AdminController',[
-	'getIndex' => 'index'
-	]);
+Route::get('/admin/listschools', array('as' => 'listschool', 'before' => 'auth' ,'uses' => 'AdminController@ListSchool'));
