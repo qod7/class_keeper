@@ -36,6 +36,14 @@ class AdminController extends BaseController {
 		return View::make('teacherlist',$this->Data);
 	}
 
+	public function ListClasses($id)
+	{
+		//list classes for the school
+		if(School::where('id',$id)->count()  == 0)
+			app::abort(404);
+		echo "This is clas list";
+	}
+
 	public function DeleteTeacher($id)
 	{
 		if(User::where('id',$id)->count() > 0)
@@ -86,6 +94,17 @@ class AdminController extends BaseController {
 			$school->name=$input['name'];
 			$school->totalclasses=$input['totalclasses'];
 			$school->save();
+
+			//create all the classes for the school
+			for($i=0; $i < $school->totalclasses; $i++)
+			{
+				$class = new Cclass();
+				$class->grade = $i+1;
+				$class->totalstudents = 0;
+				$class->schoolid = $school->id;
+				$class->routine = '';
+				$class->save();
+			}
 
 			return Redirect::route('addschool');
 		}
