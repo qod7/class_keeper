@@ -6,7 +6,7 @@ class UserController extends BaseController {
 		if(!Auth::check())
 			return View::make('login');
 		else
-			return Redirect::route('logout');
+			return Redirect::route('home');
 	}
 
 	public function postLogin()
@@ -16,8 +16,7 @@ class UserController extends BaseController {
 
 		if (Auth::attempt(array('username' => $username, 'password' => $password)))
 		{
-			echo "You Suck!";
-			return;
+			return Redirect::route('home');
 		}
 		else
 			return View::make('login',array('message' => 'Invalid username or password'));

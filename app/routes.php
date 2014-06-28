@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', array('as' => 'home', 'uses' => 'HomeController@home'));
+Route::get('/', array('as' => 'home', 'before' => 'auth' ,'uses' => 'HomeController@home'));
 
 Route::controller('user','UserController',[
 	'getLogin' => 'login',
