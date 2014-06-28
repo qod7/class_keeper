@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2014 at 05:29 AM
+-- Generation Time: Jun 28, 2014 at 07:19 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -87,13 +87,20 @@ CREATE TABLE IF NOT EXISTS `scheduleinfo` (
 --
 
 CREATE TABLE IF NOT EXISTS `school` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL,
   `hid` int(11) NOT NULL DEFAULT '0',
   `totalclasses` int(11) NOT NULL,
   `lastrefresh` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `school`
+--
+
+INSERT INTO `school` (`id`, `name`, `hid`, `totalclasses`, `lastrefresh`) VALUES
+(43, 'Pulchowk Campus', 0, 3, '2014-06-21');
 
 -- --------------------------------------------------------
 
@@ -118,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `school_id`, `username`, `password`, `created_at`, `updated_at`, `remember_token`) VALUES
-(1, 0, 0, 'admin', '$2y$10$6NyXvFeSXrJ7tChKusi9oeowTJVSSOHclae3gSx65QeMAAjTjLEyC', '2014-06-27 17:24:18', '2014-06-27 17:30:23', 'RLWMpFa1pmANK7UN2CepPHsJbEhZqvd8m8aZ2CoZiPIv9xVql6sIN9ySZvRL');
+(1, 2, 0, 'admin', '$2y$10$6NyXvFeSXrJ7tChKusi9oeowTJVSSOHclae3gSx65QeMAAjTjLEyC', '2014-06-27 17:24:18', '2014-06-28 03:31:39', 'H2zCtSgW2A9d2sSjIA14hEvtj19lxIp3mz7JZO1qwqXs43WDp6Jc3JNNNo32');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
