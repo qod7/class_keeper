@@ -36,7 +36,8 @@
 							<td>{{ $school->id }}</td>
 							<td>{{ $school->name }}</td>
 							<td>{{ $school->getHeadMasterName() }}</td>
-							<td><a href="">Delete</a> | <a href="">View Teachers</a> </td>
+							<td><a href="{{ URL::to('/school/delete/'.$school->id) }} ">Delete</a> 
+								| <a href="{{ URL::to('/school/listteacher/'.$school->id) }}">View Teachers</a> </td>
 						</tr>
 						@endforeach
 					</tbody>

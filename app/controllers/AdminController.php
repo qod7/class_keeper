@@ -18,6 +18,24 @@ class AdminController extends BaseController {
 		return View::make('addschool');
 	}
 
+	public function DeleteSchool($id)
+	{
+		if(School::where('id',$id)->count() > 0)
+			School::where('id', $id)->first()->delete();
+		return Redirect::route('listschool');
+	}
+
+	public function ListTeachers($id)
+	{
+		if(School::where('id',$id)->count()  == 0)
+			app::abort(404);
+		$school = School::where('id',$id)->first();
+		$teachers = User::where('school_id',$school->id)->get();
+		$this->Data['school'] = $school;
+		$this->Data['teachers'] = $teachers;
+		return View::make('teacherlist',$this->Data);
+	}
+
 	public function saveschool()
 	{
 		$input = Input::all();
