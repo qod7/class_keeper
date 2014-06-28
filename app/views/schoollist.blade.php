@@ -36,7 +36,7 @@
 							<td>{{ $school->id }}</td>
 							<td>{{ $school->name }}</td>
 							<td>{{ $school->getHeadMasterName() }}</td>
-							<td>Delete | Set Headmaster</td>
+							<td><a href="">Delete</a> | <a href="">View Teachers</a> </td>
 						</tr>
 						@endforeach
 					</tbody>

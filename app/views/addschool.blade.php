@@ -19,7 +19,7 @@
 				<div class="no-move"></div>
 			</div>
 			<div class="box-content">
-				@if(isset($errors))
+				@if(isset($errors) && count($errors) > 0)
 					<div class="alert alert-danger">
 						<ul>
 							@foreach($errors as $error)
