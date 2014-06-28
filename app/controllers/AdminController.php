@@ -36,6 +36,38 @@ class AdminController extends BaseController {
 		return View::make('teacherlist',$this->Data);
 	}
 
+	public function DeleteTeacher($id)
+	{
+		if(User::where('id',$id)->count() > 0)
+		{
+			$schoolid = User::where('id', $id)->first()->school_id;
+			User::where('id', $id)->first()->delete();
+			return Redirect::to('/school/listteacher/'.$schoolid);
+		}
+		return Redirect::route('listschool');
+	}
+
+	public function MakeHeadMaster($id)
+	{
+		if(User::where('id',$id)->count() == 0)
+			App::abort(404);
+		//get the school ID of the user
+		$user = User::where('id',$id)->first();
+		$schoolid = $user->school_id;
+		//search for other teachers of the same school 
+		//and remove them from head master
+		$others = User::where('school_id',$schoolid)->get();
+		foreach($others as $teacher)
+			if($teacher->role == 1)
+			{
+				$teacher->role = 0;
+				$teacher->save();
+			}
+		$user->role = 1;
+		$user->save();
+		return Redirect::to('/school/listteacher/'.$schoolid);
+	}
+
 	public function saveschool()
 	{
 		$input = Input::all();

@@ -27,6 +27,10 @@ Route::get('/school/listteacher/{id}',array('as' => 'listteacher', 'before' => '
 
 Route::get('/school/delete/{id}',array('as' => 'deleteschool', 'before' => 'auth' ,'uses' => 'AdminController@DeleteSchool'))->where('id', '[0-9]+');
 
+Route::get('/school/deleteteacher/{id}',array('as' => 'deleteteacher', 'before' => 'auth' ,'uses' => 'AdminController@DeleteTeacher'))->where('id', '[0-9]+');
+Route::get('/school/makeheadmaster/{id}',array('as' => 'makeheadmaster', 'before' => 'auth' ,'uses' => 'AdminController@MakeHeadMaster'))->where('id', '[0-9]+');
+
+
 Route::get('/school/add',array('as' => 'addschool','before' =>'auth', 'uses' => 'AdminController@addschool'));
 
 Route::post('/school/add',array('as' => 'saveschool', 'before' => 'auth', 'uses' => 'AdminController@saveschool'));

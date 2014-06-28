@@ -33,10 +33,11 @@
 					<tbody>
 						@foreach($teachers as $teacher)
 						<tr>
-							<td>{{ $teachers->id }}</td>
-							<td>{{ $teachers->name }}</td>
-							<td>{{ $teachers->username }}</td>
-							<td><a href="">Delete</a> </td>
+							<td>{{ $teacher->id }}</td>
+							<td>{{ $teacher->name }}</td>
+							<td>{{ $teacher->username }} @if($teacher->role == 1) (Headmaster)@endif</td>
+							<td><a href="{{ URL::to('/school/deleteteacher/'.$teacher->id) }}">Delete</a> 
+								| @if($teacher->role == 0)<a href="{{ URL::to('/school/makeheadmaster/'.$teacher->id) }}">Make Headmaster</a> @endif</td>
 						</tr>
 						@endforeach
 					</tbody>
